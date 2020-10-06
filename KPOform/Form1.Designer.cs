@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblSzamitogep = new System.Windows.Forms.Label();
             this.pbJatekos = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbGep = new System.Windows.Forms.PictureBox();
             this.lblGyoztes = new System.Windows.Forms.Label();
             this.btnKo = new System.Windows.Forms.Button();
             this.btnOllo = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbJatekos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGep)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -94,16 +94,18 @@
             this.pbJatekos.Location = new System.Drawing.Point(33, 54);
             this.pbJatekos.Name = "pbJatekos";
             this.pbJatekos.Size = new System.Drawing.Size(200, 200);
+            this.pbJatekos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbJatekos.TabIndex = 4;
             this.pbJatekos.TabStop = false;
             // 
-            // pictureBox1
+            // pbGep
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(333, 54);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pbGep.Location = new System.Drawing.Point(333, 54);
+            this.pbGep.Name = "pbGep";
+            this.pbGep.Size = new System.Drawing.Size(200, 200);
+            this.pbGep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbGep.TabIndex = 5;
+            this.pbGep.TabStop = false;
             // 
             // lblGyoztes
             // 
@@ -123,6 +125,7 @@
             this.btnKo.TabIndex = 7;
             this.btnKo.Text = "Kő";
             this.btnKo.UseVisualStyleBackColor = true;
+            this.btnKo.Click += new System.EventHandler(this.btnKo_Click);
             // 
             // btnOllo
             // 
@@ -132,6 +135,7 @@
             this.btnOllo.TabIndex = 8;
             this.btnOllo.Text = "Olló";
             this.btnOllo.UseVisualStyleBackColor = true;
+            this.btnOllo.Click += new System.EventHandler(this.btnOllo_Click);
             // 
             // btnPapir
             // 
@@ -141,15 +145,18 @@
             this.btnPapir.TabIndex = 9;
             this.btnPapir.Text = "Papír";
             this.btnPapir.UseVisualStyleBackColor = true;
+            this.btnPapir.Click += new System.EventHandler(this.btnPapir_Click);
             // 
             // btnKilepes
             // 
+            this.btnKilepes.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnKilepes.Location = new System.Drawing.Point(7, 413);
             this.btnKilepes.Name = "btnKilepes";
             this.btnKilepes.Size = new System.Drawing.Size(156, 31);
             this.btnKilepes.TabIndex = 10;
             this.btnKilepes.Text = "Kilépés";
             this.btnKilepes.UseVisualStyleBackColor = true;
+            this.btnKilepes.Click += new System.EventHandler(this.btnKilepes_Click);
             // 
             // btnSzabaly
             // 
@@ -168,12 +175,13 @@
             this.btnUj.TabIndex = 12;
             this.btnUj.Text = "Új játék";
             this.btnUj.UseVisualStyleBackColor = true;
+            this.btnUj.Click += new System.EventHandler(this.btnUj_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.lblGyoztes);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pbGep);
             this.panel1.Controls.Add(this.pbJatekos);
             this.panel1.Controls.Add(this.lblSzamitogep);
             this.panel1.Controls.Add(this.label3);
@@ -200,6 +208,7 @@
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonDropDown;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnKilepes;
             this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -210,7 +219,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kő, Papír, Olló";
             ((System.ComponentModel.ISupportInitialize)(this.pbJatekos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGep)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -225,7 +234,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSzamitogep;
         private System.Windows.Forms.PictureBox pbJatekos;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbGep;
         private System.Windows.Forms.Label lblGyoztes;
         private System.Windows.Forms.Button btnKo;
         private System.Windows.Forms.Button btnOllo;
